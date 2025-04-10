@@ -3,13 +3,11 @@ const int din = 8 ;
 int potin;
 int pot;
 
-//For providing logic to L298 IC to choose the direction of the DC motor 
-
 void setup()
 {
 Serial.begin(9600);
 
-pinMode(din,OUTPUT) ; 	//Logic pins are also set as output
+pinMode(din,OUTPUT) ; 
 pinMode(A1, INPUT);
 pinMode(11, OUTPUT);
 }
