@@ -1,34 +1,12 @@
+# TASK 2
 
-const int din = 8 ;
-int potin;
-int pot;
+#Components Required:
+*microcontroller(arduino uno)
+*potentiometer(10k ohm)
+*motor driver (MD10C)
+*battery
+*Motor
+*jumper wires
 
-//For providing logic to L298 IC to choose the direction of the DC motor 
-
-void setup()
-{
-Serial.begin(9600);
-
-pinMode(din,OUTPUT) ; 	//Logic pins are also set as output
-pinMode(A1, INPUT);
-pinMode(11, OUTPUT);
-}
-
-void loop()
-
-{
- pot = analogRead(A1);
- Serial.println(pot);
- delay(500);
- if(pot>=0&&pot<512){
-  potin = map(pot, 0, 512, 0 , 255);
-  analogWrite(11, potin);
-  digitalWrite(din,LOW);
- }
-  else if(pot>512&&pot<=1023)
-  {
-     potin = map(pot, 512, 1023 , 0, 255);
-     analogWrite(11, potin);
-     digitalWrite(din,HIGH);
-  }
- }
+#Procedure
+#IN this project , i control a dc motor using the the microcontroller and md10c motor driver (we can use any H bridge motor driver) with the help of 10K ohm potentiometer ,( we can use any pot of suitable resistance), and we connect two extreme leg to +5v and gnd and middle leg to A1 pin of arduino , we take analog input from potentiometer and map it to pwm single -> till (0-513) and map it to ( 0-255) to controll the speed in 1 direction(clockwise) and (513-1023) and map it to  (255-0) in anticlockwise direction . i did use if and else if statement of analog signal and give direction signal accordingly and pwm according to analog values of potentiometer  .  
