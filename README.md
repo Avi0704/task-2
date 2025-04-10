@@ -1,6 +1,6 @@
 # TASK 2
 
-Components Required:
+#Components Required:
 *microcontroller(arduino uno)
 *potentiometer(10k ohm)
 *motor driver (MD10C)
